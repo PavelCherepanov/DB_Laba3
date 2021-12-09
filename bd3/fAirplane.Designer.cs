@@ -84,7 +84,7 @@ namespace bd3
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(553, 341);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Add";
+            this.tabPage1.Text = "Добавить";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // label2
@@ -125,7 +125,7 @@ namespace bd3
             this.bAdd.Name = "bAdd";
             this.bAdd.Size = new System.Drawing.Size(94, 29);
             this.bAdd.TabIndex = 0;
-            this.bAdd.Text = "Add";
+            this.bAdd.Text = "Добавить";
             this.bAdd.UseVisualStyleBackColor = true;
             this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
             // 
@@ -142,7 +142,7 @@ namespace bd3
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(553, 341);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Edit";
+            this.tabPage2.Text = "Изменить";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // textBox3
@@ -191,7 +191,7 @@ namespace bd3
             this.bEdit.Name = "bEdit";
             this.bEdit.Size = new System.Drawing.Size(94, 29);
             this.bEdit.TabIndex = 0;
-            this.bEdit.Text = "Edit";
+            this.bEdit.Text = "Изменить";
             this.bEdit.UseVisualStyleBackColor = true;
             this.bEdit.Click += new System.EventHandler(this.bEdit_Click);
             // 

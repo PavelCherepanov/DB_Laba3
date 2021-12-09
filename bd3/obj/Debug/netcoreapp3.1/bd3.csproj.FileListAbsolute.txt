@@ -24,3 +24,7 @@ C:\Users\Pavel\source\repos\bd3\bd3\obj\Debug\netcoreapp3.1\bd3.pdb
 C:\Users\Pavel\source\repos\bd3\bd3\obj\Debug\netcoreapp3.1\bd3.genruntimeconfig.cache
 C:\Users\Pavel\source\repos\bd3\bd3\obj\Debug\netcoreapp3.1\bd3.fPassenger.resources
 C:\Users\Pavel\source\repos\bd3\bd3\obj\Debug\netcoreapp3.1\bd3.fTicket.resources
+C:\Users\Pavel\source\repos\bd3\bd3\obj\Debug\netcoreapp3.1\bd3.fReport.resources
+C:\Users\Pavel\source\repos\bd3\bd3\obj\Debug\netcoreapp3.1\bd3.fReport2.resources
+C:\Users\Pavel\source\repos\bd3\bd3\obj\Debug\netcoreapp3.1\bd3.Form2.resources
+C:\Users\Pavel\source\repos\bd3\bd3\obj\Debug\netcoreapp3.1\bd3.frFlight.resources

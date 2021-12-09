@@ -40,5 +40,31 @@ namespace bd3
             fTicket ticket = new fTicket();
             ticket.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fReport report = new fReport();
+            report.Show();
+        }
+
+        
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            fReport2 report = new fReport2();
+            report.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2 f = new Form2();
+            f.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            frFlight fr = new frFlight();
+            fr.Show();
+        }
     }
 }

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace bd3
@@ -16,7 +17,6 @@ namespace bd3
         {
             InitializeComponent();
             showData();
-           // textBox4.Text
         }
         public void showData()
         {
@@ -68,27 +68,40 @@ namespace bd3
 
         private void bAdd_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(str);
-            con.Open();
             string maxNumberOfPassengers = tbPassenger.Text;
             string manufacturer = tbManufacturer.Text;
+            bool isMaxNumberOfPassengers = Regex.IsMatch(maxNumberOfPassengers, @"[\d]");
+            bool isManufacturer = Regex.IsMatch(manufacturer, @"[a-zA-ZА-Яа-я]");
+            
 
-            string query = $"INSERT INTO [dbo].[Airplane] ([maxNumberOfPassengers], [manufacturer]) VALUES " +
-                $"('{maxNumberOfPassengers}', '{manufacturer}');";
-
-
-            SqlCommand cmd = new SqlCommand(query, con);
-            try
+            if (isMaxNumberOfPassengers == true & isManufacturer == true)
             {
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception es)
-            {
-                MessageBox.Show(es.Message);
-            }
 
-            con.Close();
-            showData();
+                SqlConnection con = new SqlConnection(str);
+                con.Open();
+
+
+                string query = $"INSERT INTO [dbo].[Airplane] ([maxNumberOfPassengers], [manufacturer]) VALUES " +
+                    $"('{maxNumberOfPassengers}', '{manufacturer}');";
+
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception es)
+                {
+                    MessageBox.Show(es.Message);
+                }
+
+                con.Close();
+                showData();
+            }
+            else
+            {
+                MessageBox.Show("Проверьте введенные данные");
+            }
         }
         public void deleteRow(string id)
         {
@@ -131,21 +144,33 @@ namespace bd3
             string maxNumberOfPassengers = textBox2.Text;
             string manufacturer = textBox1.Text;
 
-            editRow(id, Convert.ToInt32(maxNumberOfPassengers), manufacturer);
+            bool isMaxNumberOfPassengers = Regex.IsMatch(maxNumberOfPassengers, @"[\d]");
+            bool isManufacturer = Regex.IsMatch(manufacturer, @"[a-zA-ZА-Яа-я]");
 
-            showData();
-        }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //string id = "";
-            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            if (isMaxNumberOfPassengers == true & isManufacturer == true)
             {
-                //id = row.Cells[0].Value.ToString();
-                textBox3.Text = row.Cells[0].Value.ToString();
-                textBox2.Text = row.Cells[1].Value.ToString();
-                textBox1.Text = row.Cells[2].Value.ToString();
+
+                editRow(id, Convert.ToInt32(maxNumberOfPassengers), manufacturer);
+
+                showData();
             }
-        }
+            else
+            {
+                MessageBox.Show("Проверьте введенные данные");
+            }
+            }
+
+            private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+            {
+            //string id = "";
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    //id = row.Cells[0].Value.ToString();
+                    textBox3.Text = row.Cells[0].Value.ToString();
+                    textBox2.Text = row.Cells[1].Value.ToString();
+                    textBox1.Text = row.Cells[2].Value.ToString();
+                }
+            }
     }
 }

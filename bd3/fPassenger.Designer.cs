@@ -40,6 +40,7 @@ namespace bd3
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.bAdd = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.bEdit = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -47,7 +48,6 @@ namespace bd3
             this.label4 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -90,7 +90,7 @@ namespace bd3
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(553, 341);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Add";
+            this.tabPage1.Text = "Добавить";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // label5
@@ -147,7 +147,7 @@ namespace bd3
             this.bAdd.Name = "bAdd";
             this.bAdd.Size = new System.Drawing.Size(94, 29);
             this.bAdd.TabIndex = 0;
-            this.bAdd.Text = "Add";
+            this.bAdd.Text = "Добавить";
             this.bAdd.UseVisualStyleBackColor = true;
             this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
             // 
@@ -166,8 +166,16 @@ namespace bd3
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(553, 341);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Edit";
+            this.tabPage2.Text = "Изменить";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(200, 295);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(125, 27);
+            this.textBox4.TabIndex = 13;
+            this.textBox4.Visible = false;
             // 
             // label3
             // 
@@ -184,7 +192,7 @@ namespace bd3
             this.bEdit.Name = "bEdit";
             this.bEdit.Size = new System.Drawing.Size(94, 29);
             this.bEdit.TabIndex = 0;
-            this.bEdit.Text = "Edit";
+            this.bEdit.Text = "Изменить";
             this.bEdit.UseVisualStyleBackColor = true;
             this.bEdit.Click += new System.EventHandler(this.bEdit_Click);
             // 
@@ -226,14 +234,6 @@ namespace bd3
             this.label6.Size = new System.Drawing.Size(46, 20);
             this.label6.TabIndex = 9;
             this.label6.Text = "email";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(200, 295);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 27);
-            this.textBox4.TabIndex = 13;
-            this.textBox4.Visible = false;
             // 
             // fPassenger
             // 

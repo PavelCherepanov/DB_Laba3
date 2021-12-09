@@ -31,6 +31,8 @@ namespace bd3
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker9 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker8 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -47,6 +49,8 @@ namespace bd3
             this.tbFlight = new System.Windows.Forms.TextBox();
             this.bAdd = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label17 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
@@ -74,14 +78,16 @@ namespace bd3
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(619, 46);
+            this.tabControl1.Location = new System.Drawing.Point(1106, 113);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(824, 706);
+            this.tabControl1.Size = new System.Drawing.Size(776, 700);
             this.tabControl1.TabIndex = 3;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label15);
+            this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.dateTimePicker9);
             this.tabPage1.Controls.Add(this.dateTimePicker8);
             this.tabPage1.Controls.Add(this.label8);
@@ -100,10 +106,27 @@ namespace bd3
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(816, 673);
+            this.tabPage1.Size = new System.Drawing.Size(768, 667);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Add";
+            this.tabPage1.Text = "Добавить";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(51, 174);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(0, 20);
+            this.label15.TabIndex = 17;
+            this.label15.Visible = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(26, 290);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(249, 28);
+            this.comboBox1.TabIndex = 16;
             // 
             // dateTimePicker9
             // 
@@ -227,12 +250,14 @@ namespace bd3
             this.bAdd.Name = "bAdd";
             this.bAdd.Size = new System.Drawing.Size(94, 29);
             this.bAdd.TabIndex = 0;
-            this.bAdd.Text = "Add";
+            this.bAdd.Text = "Добавить";
             this.bAdd.UseVisualStyleBackColor = true;
             this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label17);
+            this.tabPage2.Controls.Add(this.comboBox2);
             this.tabPage2.Controls.Add(this.textBox6);
             this.tabPage2.Controls.Add(this.dateTimePicker6);
             this.tabPage2.Controls.Add(this.dateTimePicker5);
@@ -252,10 +277,27 @@ namespace bd3
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(816, 673);
+            this.tabPage2.Size = new System.Drawing.Size(768, 667);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Edit";
+            this.tabPage2.Text = "Изменить";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(75, 22);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(0, 20);
+            this.label17.TabIndex = 31;
+            this.label17.Visible = false;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(6, 235);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(183, 28);
+            this.comboBox2.TabIndex = 30;
             // 
             // textBox6
             // 
@@ -387,7 +429,7 @@ namespace bd3
             this.bEdit.Name = "bEdit";
             this.bEdit.Size = new System.Drawing.Size(94, 29);
             this.bEdit.TabIndex = 0;
-            this.bEdit.Text = "Edit";
+            this.bEdit.Text = "Изменить";
             this.bEdit.UseVisualStyleBackColor = true;
             this.bEdit.Click += new System.EventHandler(this.bEdit_Click);
             // 
@@ -398,7 +440,7 @@ namespace bd3
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(601, 682);
+            this.dataGridView1.Size = new System.Drawing.Size(1078, 682);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -407,7 +449,7 @@ namespace bd3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1559, 945);
+            this.ClientSize = new System.Drawing.Size(1908, 990);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "fFlight";
@@ -459,5 +501,9 @@ namespace bd3
         private System.Windows.Forms.DateTimePicker dateTimePicker8;
         private System.Windows.Forms.DateTimePicker dateTimePicker9;
         private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label17;
     }
 }

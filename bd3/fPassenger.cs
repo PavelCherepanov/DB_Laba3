@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace bd3
@@ -63,7 +64,7 @@ namespace bd3
                 MessageBox.Show(es.Message);
             }
             con.Close();
-            showData();
+            
         }
 
         public void editRow(string id, string email, string name, string surname)
@@ -89,26 +90,38 @@ namespace bd3
         {
             SqlConnection con = new SqlConnection(str);
             con.Open();
+            
             string email = tbEmail.Text;
             string name = tbName.Text;
             string surname = tbSurname.Text;
 
-            string query = $"INSERT INTO [dbo].[Passenger] ([email], [name], [surname]) VALUES " +
+            bool isEmail = Regex.IsMatch(email, @"[\w]+@[\w]+.[\w]{2,6}");
+            bool isName = Regex.IsMatch(name, @"[a-zA-ZА-Яа-я]");
+            bool isSurname = Regex.IsMatch(surname, @"[a-zA-ZА-Яа-я]");
+            if (isEmail == true & isName == true & isSurname == true)
+            {
+                string query = $"INSERT INTO [dbo].[Passenger] ([email], [name], [surname]) VALUES " +
                 $"('{email}', '{name}', '{surname}');";
 
 
-            SqlCommand cmd = new SqlCommand(query, con);
-            try
-            {
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception es)
-            {
-                MessageBox.Show(es.Message);
-            }
+                SqlCommand cmd = new SqlCommand(query, con);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception es)
+                {
+                    MessageBox.Show(es.Message);
+                }
 
-            con.Close();
-            showData();
+                con.Close();
+                showData();
+            }
+            else
+            {
+                MessageBox.Show("Проверьте введенные данные");
+            }
+            
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -123,6 +136,7 @@ namespace bd3
             {
                 deleteRow(id);
             }
+            showData();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -145,9 +159,22 @@ namespace bd3
             string name = textBox2.Text;
             string surname = textBox1.Text;
 
-            editRow(id, email, name, surname);
- 
-            showData();
+            bool isEmail = Regex.IsMatch(email, @"[\w]+@[\w]+.[\w]{2,6}");
+            bool isName = Regex.IsMatch(name, @"[a-zA-ZА-Яа-я]");
+            bool isSurname = Regex.IsMatch(surname, @"[a-zA-ZА-Яа-я]");
+
+            if (isEmail == true & isName == true & isSurname == true)
+            {
+                editRow(id, email, name, surname);
+
+                showData();
+            }
+            else
+            {
+                MessageBox.Show("Проверьте введенные данные");
+            }
+
+                
         }
     }
 }
